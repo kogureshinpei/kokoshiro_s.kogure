@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sugoshu - 証明写真作成ツール（調整・保存 / ロック）</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="page2">
+  <header class="header">
+    <div class="container header__inner">
+      <div class="brand" aria-label="Sugoshu">
+        <svg class="brand__mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true">
+          <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path>
+        </svg>
+        <div class="brand__name">Sugoshu</div>
+      </div>
+
+      <div class="header__actions">
+        <button class="btn btn--ghost" type="button" data-login>ログイン</button>
+        <button class="btn btn--primary" type="button" data-signup>新規登録</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <section class="hero" aria-label="キャッチコピー（小）">
+        <h1 class="hero__title">あなたの魅力を引き出す<span class="hero__accent">最高の一枚</span>を</h1>
+      </section>
+
+      <section class="steps" aria-label="手順">
+        <div class="steps__line" aria-hidden="true"></div>
+        <div class="steps__items">
+          <div class="step">
+            <div class="step__icon" aria-hidden="true" style="background:#f3ece7;color:var(--primary);">
+              <span class="material-symbols-outlined">check</span>
+            </div>
+            <div class="step__meta">
+              <div class="step__kicker">Step 01</div>
+              <div class="step__label">アップロード</div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step__icon step__icon--active" aria-hidden="true">
+              <span class="material-symbols-outlined">edit_square</span>
+            </div>
+            <div class="step__meta">
+              <div class="step__kicker step__kicker--active">Step 02</div>
+              <div class="step__label">調整</div>
+            </div>
+          </div>
+
+          <div class="step step--inactive">
+            <div class="step__icon" aria-hidden="true">
+              <span class="material-symbols-outlined">download</span>
+            </div>
+            <div class="step__meta">
+              <div class="step__kicker">Step 03</div>
+              <div class="step__label">保存</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="locked-grid" aria-label="ロックされた調整・保存">
+        <!-- Preview -->
+        <div class="preview" aria-label="生成結果プレビュー（モザイク）">
+          <div class="preview__img" data-preview-bg aria-hidden="true"></div>
+          <div class="preview__mosaic" aria-hidden="true"></div>
+          <div class="preview__center">
+            <div class="lock-card" role="dialog" aria-label="登録誘導">
+              <div class="lock-card__icon" aria-hidden="true">
+                <span class="material-symbols-outlined" style="font-size:30px;">lock</span>
+              </div>
+              <h2 class="lock-card__title">新規登録して<br>完成品を確認！</h2>
+              <p class="lock-card__desc">
+                AIがあなたの表情を最適化しました。<br>
+                保存してダウンロードするには登録が必要です。
+              </p>
+              <button class="lock-card__cta" type="button" data-signup>今すぐ新規登録（無料）</button>
+
+              <div class="formats" aria-label="対応形式">
+                <p class="formats__kicker">Supported formats</p>
+                <div class="formats__row">
+                  <span class="badge">PDF</span>
+                  <span class="badge">JPEG</span>
+                  <span class="badge">PNG</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Side -->
+        <aside class="side" aria-label="調整パネル">
+          <div class="panel panel--disabled" aria-disabled="true">
+            <h3 class="panel__title">
+              <span class="material-symbols-outlined" aria-hidden="true">tune</span>
+              調整オプション
+            </h3>
+
+            <div class="slider" aria-label="明るさ">
+              <div class="slider__row"><span>明るさ</span><span>+10%</span></div>
+              <div class="track" aria-hidden="true"><div class="track__fill"></div></div>
+            </div>
+
+            <div class="slider" aria-label="美肌補正">
+              <div class="slider__row"><span>美肌補正</span><span>標準</span></div>
+              <div class="track" aria-hidden="true"><div class="track__fill track__fill--40"></div></div>
+            </div>
+          </div>
+
+          <div class="ai" aria-label="AI自動最適化">
+            <div class="ai__row">
+              <div class="ai__icon" aria-hidden="true">
+                <span class="material-symbols-outlined">auto_awesome</span>
+              </div>
+              <div>
+                <h3 class="ai__title">AI自動最適化済み</h3>
+                <p class="ai__text">履歴書に最適な背景色への変更と、左右のバランス調整が完了しています。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" aria-label="戻る">
+            <h3 class="panel__title">
+              <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+              アップロードに戻る
+            </h3>
+            <p style="margin:0;color:var(--muted);font-weight:700;font-size:13px;line-height:1.6;">
+              写真を選び直したい場合は、アップロード画面に戻ってください。
+            </p>
+            <div style="margin-top:12px;">
+              <a class="btn btn--primary" href="../index.html" style="display:inline-flex;align-items:center;gap:8px;">戻る</a>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="brand" aria-label="Sugoshu footer">
+        <svg class="brand__mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true" style="width:26px;height:26px;">
+          <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path>
+        </svg>
+        <div style="font-weight:900;color:var(--muted);">© 2024 Sugoshu</div>
+      </div>
+
+      <nav class="footer__links" aria-label="フッターリンク">
+        <a href="#">利用規約</a>
+        <a href="#">プライバシーポリシー</a>
+        <a href="#">特定商取引法に基づく表記</a>
+      </nav>
+
+      <div style="color:var(--muted);font-size:12px;font-weight:700;">© 2024 Sugoshu. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

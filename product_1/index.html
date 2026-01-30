@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sugoshu - 証明写真作成ツール（アップロード）</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <div class="brand" aria-label="Sugoshu">
+        <svg class="brand__mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true">
+          <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path>
+        </svg>
+        <div class="brand__name">Sugoshu</div>
+      </div>
+
+      <div class="header__actions">
+        <button class="btn btn--ghost" type="button">ログイン</button>
+        <button class="btn btn--primary" type="button">新規登録</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <!-- Catch Copy -->
+      <section class="hero" aria-label="キャッチコピー">
+        <h1 class="hero__title">
+          あなたの魅力を引き出す<br />
+          <span class="hero__accent">最高の一枚</span>を
+        </h1>
+        <p class="hero__sub">AIが証明写真に最適な補正と背景合成を行います</p>
+      </section>
+
+      <!-- Steps -->
+      <section class="steps" aria-label="手順">
+        <div class="steps__line" aria-hidden="true"></div>
+        <div class="steps__items">
+          <div class="step">
+            <div class="step__icon step__icon--active" aria-hidden="true">
+              <span class="material-symbols-outlined">upload</span>
+            </div>
+            <div class="step__meta">
+              <div class="step__kicker step__kicker--active">Step 01</div>
+              <div class="step__label">アップロード</div>
+            </div>
+          </div>
+
+          <div class="step step--inactive">
+            <div class="step__icon" aria-hidden="true">
+              <span class="material-symbols-outlined">edit_square</span>
+            </div>
+            <div class="step__meta">
+              <div class="step__kicker">Step 02</div>
+              <div class="step__label">調整</div>
+            </div>
+          </div>
+
+          <div class="step step--inactive">
+            <div class="step__icon" aria-hidden="true">
+              <span class="material-symbols-outlined">save</span>
+            </div>
+            <div class="step__meta">
+              <div class="step__kicker">Step 03</div>
+              <div class="step__label">保存</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Upload -->
+      <section class="upload" aria-label="アップロード">
+        <div class="drop" data-dropzone role="button" tabindex="0"
+          aria-label="ここに写真をドラッグ＆ドロップ、またはクリックして選択">
+          <div class="drop__inner">
+            <div class="drop__icon" aria-hidden="true">
+              <span class="material-symbols-outlined" style="font-size:52px;">add_photo_alternate</span>
+            </div>
+
+            <div>
+              <p class="drop__title">ここに写真をドラッグ＆ドロップ</p>
+              <p class="drop__desc">または、お使いのデバイスからファイルを選択してください</p>
+            </div>
+
+            <button class="file-btn" data-pick type="button">
+              <span class="material-symbols-outlined">folder_open</span>
+              ファイルを選択
+            </button>
+
+            <input id="fileInput" class="sr-only" type="file" accept="image/jpeg,image/png,image/webp" />
+
+            <div class="meta" aria-label="対応形式とサイズ">
+              <div class="meta__item">
+                <span class="material-symbols-outlined" aria-hidden="true" style="font-size:18px;">check_circle</span>
+                JPG, PNG, WebP形式
+              </div>
+              <div class="meta__item">
+                <span class="material-symbols-outlined" aria-hidden="true" style="font-size:18px;">check_circle</span>
+                最大 10MB まで
+              </div>
+            </div>
+
+            <p class="hidden" data-error style="margin:0; color:#b42318; font-weight:800; font-size:13px;"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tips -->
+      <section class="tips" aria-label="撮影のヒント">
+        <div class="tip">
+          <div class="tip__icon" aria-hidden="true">
+            <span class="material-symbols-outlined">lightbulb</span>
+          </div>
+          <div>
+            <h2 class="tip__title">おすすめの撮影環境</h2>
+            <p class="tip__text">明るい昼間の室内で、窓に向かって撮影すると顔が綺麗に映ります。</p>
+          </div>
+        </div>
+
+        <div class="tip">
+          <div class="tip__icon" aria-hidden="true">
+            <span class="material-symbols-outlined">background_replace</span>
+          </div>
+          <div>
+            <h2 class="tip__title">背景の切り抜き</h2>
+            <p class="tip__text">AIが自動で背景を消去するので、なるべく壁などの無地の前で撮影してください。</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="brand" aria-label="Sugoshu footer">
+        <svg class="brand__mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true" style="width:26px;height:26px;">
+          <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path>
+        </svg>
+        <div style="font-weight:900;color:var(--muted);">© 2024 Sugoshu</div>
+      </div>
+
+      <nav class="footer__links" aria-label="フッターリンク">
+        <a href="#">利用規約</a>
+        <a href="#">プライバシーポリシー</a>
+        <a href="#">特定商取引法に基づく表記</a>
+        <a href="#">お問い合わせ</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
